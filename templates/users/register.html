@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>register</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/layui.css"/>
+
+</head>
+<body>
+<div class="main">
+    <div class="header">
+{#        <div class="logo">#}
+{#            <img src="/static/img/logo.png" class="logoImg">#}
+{#        </div>#}
+        <div class="slogan">
+            <!-- <p>欢迎使用职业卫生评价检测系统</p> -->
+            <img src="/static/img/未标题-2.png" style="width: 350px;">
+        </div>
+    </div>
+    <div class="container">
+        <div class="form_left">
+            <form action="{{ request.get_full_path }}" method="POST" class="in_form" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" class="input" name="username" placeholder="用户名">
+                <input type="password" class="input" name="password" placeholder="密码">
+                <input type="password" class="input" name="re_password" placeholder="重复密码">
+                <input type="text" class="input" name="name" placeholder="姓名">
+                <input type="text" class="input" name="phone" placeholder="手机号码">
+{#                <label for="xfile" class="ui_button">选择头像</label>#}
+{#                <input type="file" class="input" id="xfile" name="file"#}
+{#                       accept="image/jpg,image/jpeg, image/png, image/gif" onchange="previewFile()">#}
+
+                <div style="border:1px solid #ccc; height: 30px; width:220px;  border-radius: 3px; margin: 10px auto;">
+                    <input type="button" value="选择头像" style="border: none; height: 30px; width: 65px; float: left; " onclick="javascript:$('input[name=\'file\']').click();"/>
+                    <input id="file_input" readonly style="border:none; height: 30px; width: 145px;  float: left;"/>
+                    <input type="file" id="file" name="file" style="display: none;" accept="image/jpg,image/jpeg, image/png, image/gif" onchange="previewFile()"/>
+                </div>
+
+
+                <div class="small">
+                    <div class="remember">
+                        <input type="checkbox" name="checkbox" class="after_checkbox" id="check" lay-skin="primary"
+                               value="记住密码"/>
+                        <label class="after_checkbox">我已同意使用协议</label>
+                    </div>
+                    {#                    <div class="forget">#}
+                    {#                        <a href="/register/">注册</a>#}
+                    {#                    </div>#}
+
+                </div>
+                <div style="position: absolute;">
+                    <span style="color: red; font-size: 10px;">{{ error }}</span>
+                </div>
+                <div>
+                    <input type="submit" class="submit" value="注册"/>
+                </div>
+            </form>
+        </div>
+        <div class="cut">
+            <div class="up"></div>
+            <span class="huo">#</span>
+            <div class="down"></div>
+        </div>
+        <div class="qrc">
+            <div class="out_img">
+               <img src="/static/img/user.jpg" class="qr" alt="Image previewFile">
+            </div>
+            <input type="button" value="头像图片预览" class="fake_bottom"/>
+
+{#            <p style="font-size: 16px;text-align: center; font-weight: 600; border: 1px solid #C2C2C2;margin-bottom: 50px;">头像图片预览</p>#}
+        </div>
+    </div>
+    <div class="footer">
+        <div class="about">
+            <a href="http://www.cqszfy.com">重庆市六院</a>
+            <span>|</span>
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="http://www.simonmz.ink">主页</a>
+            <span>|</span>
+            <span>联系电话:18623412354</span>
+        </div>
+        <div class="copyright">
+					<span id="">
+						Copyright&copy;2019-2020, simonmz.cn, All rightreserved.
+					</span>
+        </div>
+    </div>
+</div>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/layui.js"></script>
+{#<script>#}
+{#    //一般直接写在一个js文件中#}
+{#    layui.use(['layer', 'form'], function () {#}
+{#        var layer = layui.layer#}
+{#            , form = layui.form;#}
+{##}
+{#        layer.msg('Hello World');#}
+{#    });#}
+{#</script>#}
+<script type="text/javascript">
+    // 获取主界面元素
+    var t = document.getElementsByClassName('main')[0];
+    // 获取logo元素
+    var f = document.getElementsByClassName('slogan')[0];
+    // 获取窗口高度
+    var h = document.documentElement.clientHeight;
+    var p = 'px';
+    // 计算logo举例顶部距离
+    var fv = h / 2 - 275;
+    // 计算主界面元素高度
+    var tv = h - fv;
+    // 拼接赋值
+    t.style.height = tv + p;
+    f.style.marginTop = fv + p;
+    // f.setAttribute('marginTop':fv+p);
+</script>
+<script type="text/javascript">
+    function previewFile() {
+        var preview = document.getElementsByClassName('qr')[0];
+        var file = document.querySelector('input[type=file]').files[0];
+        var filePath = document.getElementById('file').value;
+        var reader = new FileReader();
+        var fileInput = document.getElementById('file_input');
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        };
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+        fileInput.value=filePath;
+
+        // fileInput.value(this.files[0].name)
+    }
+    // $(document).ready(function () {
+    //    $('input[name=\'file\']').val(this.files[0].name);
+    // })
+</script>
+</body>
+</html>
+
+
+
+
+
