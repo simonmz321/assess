@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'data_system.apps.DataSystemConfig',
     'calculator.apps.CalculatorConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -79,7 +81,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'assess_system',
+        'NAME': 'assess',
         'USER': 'root',
         'PASSWORD': '777885',
         'HOST': 'www.simonmz.cn',
@@ -128,7 +130,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 # Session的cookie失效日期（20分钟）
@@ -136,9 +138,9 @@ SESSION_COOKIE_AGE = 1200
 # 每次请求都保存Session
 SESSION_SAVE_EVERY_REQUEST = True
 # 自建用户表
-# AUTH_USER_MODEL = 'users.UserInfo'
+AUTH_USER_MODEL = 'users.UserInfo'
 # 用户头像相关
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = '/login/'
