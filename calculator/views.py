@@ -7,3 +7,7 @@ from users import models as users
 import time
 
 # Create your views here.
+
+
+def calculator(request):
+    return render(request, 'calculator/calculator.html')

@@ -13,9 +13,9 @@
 # """
 from django.contrib import admin
 from django.urls import path
-from data_system import views
+from calculator import views
 from myproject import urls
 
 urlpatterns = [
-    path('', views.chemicals),
+    path('', views.calculator),
 ]

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>职业卫生检测与评价系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="/static/Ionicons/ionicons.min.css">
+  <link rel="stylesheet" href="/static/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="/static/dist/css/skins/skin-blue.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header 顶栏部分 -->
+  <header class="main-header">
+
+    <!-- Logo 顶栏logo部分-->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels 侧边栏关闭slogan -->
+      <span class="logo-mini"><b>S</b>MZ</span>
+      <!-- logo for regular state and mobile devices 侧边栏打开slogan-->
+      <span class="logo-lg"><b>Simon</b>MZ</span>
+    </a>
+
+    <!-- Header Navbar 顶栏主体部分-->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button 开启和关闭侧边栏按钮-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu 顶栏右侧菜单-->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- 信封图标Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <!-- 信封按钮Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            {#信封按钮打开的菜单  #}
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the messages -->
+                <ul class="menu">
+                  <li>
+                    <!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <!-- User Image 用户头像 -->
+                        <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <!-- 信息标题和时间Message title and timestamp -->
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                      <!-- 信息内容The message -->
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                </ul>
+                <!-- /.menu-->
+              </li>
+                <!--信封打开内容页脚-->
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+          <!-- /.messages-menu -->
+
+          <!--铃铛图标 Notifications Menu -->
+          <li class="dropdown notifications-menu">
+            <!-- 图标Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+                {#铃铛图标标题部分#}
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- 铃铛图标主体内容Inner Menu: contains the notifications -->
+                <ul class="menu">
+                  <li><!-- start notification -->
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <!-- end notification -->
+                </ul>
+              </li>
+                {#铃铛打开信息页脚部分#}
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          <!--旗帜图标 Tasks Menu -->
+          <li class="dropdown tasks-menu">
+            <!--旗帜图标按钮部分 Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+                {#旗帜图标标题部分#}
+              <li class="header">You have 9 tasks</li>
+              <li>
+                <!-- Inner menu: contains the tasks -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <!-- Task title and progress text -->
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <!--进度条 The progress bar -->
+                      <div class="progress xs">
+                        <!-- Change the css width attribute to simulate progress -->
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
+          <!--用户显示部分 User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!--用户按钮 Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!--用户头像 The user image in the navbar-->
+              <img src="{{ sign_img }}" class="user-image" alt="User Image" style="object-fit:cover;">
+              <!--用户名称，页面缩小时隐藏 hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">{{ username }}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                  <!-- 用户头像 -->
+                <img src="{{ sign_img }}" class="img-circle" alt="User Image" style="object-fit:cover;">
+                {#用户名称#}
+                <p>
+                  {{ name }} - 超级管理员
+                  <small>Member since {{ date_joined|date:'Y-m' }}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+{#              <li class="user-body">#}
+{#                <div class="row">#}
+{#                  <div class="col-xs-4 text-center">#}
+{#                    <a href="#">Followers</a>#}
+{#                  </div>#}
+{#                  <div class="col-xs-4 text-center">#}
+{#                    <a href="#">Sales</a>#}
+{#                  </div>#}
+{#                  <div class="col-xs-4 text-center">#}
+{#                    <a href="#">Friends</a>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <!-- /.row -->#}
+{#              </li>#}
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="/profile/?username={{ username }}" class="btn btn-default btn-flat">账号管理</a>
+                </div>
+                <div class="pull-right">
+                  <a href="/logout/" class="btn btn-default btn-flat">退出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- 控制按钮Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- 左侧边栏Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!--侧边栏缩小版 sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+         <!-- 头像 -->
+        <div class="pull-left image">
+          <img src="{{ sign_img }}" style="object-fit:cover; height: 45px; width: 45px;" class="img-circle" alt="User Image">
+        </div>
+          <!-- 用户名 -->
+        <div class="pull-left info">
+          <p>{{ name }}</p>
+          <!--在线状态 Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+      <!--搜索框 search form (Optional) -->
+{#      <form action="#" method="get" class="sidebar-form">#}
+{#        <div class="input-group">#}
+{#          <input type="text" name="q" class="form-control" placeholder="Search...">#}
+{#          <span class="input-group-btn">#}
+{#              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>#}
+{#              </button>#}
+{#            </span>#}
+{#        </div>#}
+{#      </form>#}
+      <!-- /.search form -->
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">项目列表</li>
+        <!-- Optionally, you can add icons to the links -->
+        <!--被选中的选项-->
+<!--        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>-->
+        <!--未被选中的选项-->
+<!--        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>-->
+        <!--可展开选项-->
+        <li class="treeview menu-open">
+          <a href="#"><i class="fa fa-table"></i> <span>原始表格</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu" style="display: block">
+            <li class="active"><a href="#"><i class="fa fa-industry"></i><small>化学物质基本信息表</small></a></li>
+            <li><a href="#"><small>化学物质危害信息表</small></a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>检测报告计算</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="#">化学物质计算</a></li>
+            <li><a href="#">粉尘计算</a></li>
+            <li><a href="#">物理因素计算</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        化学因素检测结果评价计算
+        <small>自动化评价系统</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 检测报告计算</a></li>
+        <li class="active">化学因素计算</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Hover Data Table</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-sm-6">
+                        <div class="dataTables_length" id="example1_length">
+                            上方左侧的内容
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        上方右侧的内容
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                       原来表格的位置
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5" id="example2_info">
+                        show {{ obj.start|add:1 }} to {{ obj.end }} of {{ total_count }} entries
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="dataTables_paginate paging_simple_numbers">
+                            <ul class="pagination">
+                                {{ page_html|safe }}
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+      </div>
+          <!-- /.box -->
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2019 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+
+  <!--顶栏选项按钮唤处页面 Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane active" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="pull-right-container">
+                    <span class="label label-danger pull-right">70%</span>
+                  </span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="/static/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<!--jquery table组件-->
+<script src="/static/datatables.net/js/jquery.dataTables.min.js"></script>
+<!--bootstrip table组件-->
+<script src="/static/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="/static/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/static/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="/static/dist/js/adminlte.min.js"></script>
+<script src="/static/dist/js/demo.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable();
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+<script>
+    $('.per_num').change(function () {
+        $.ajax({
+            url:'/per_num/',
+            type: 'GET',
+            data:{'per_num': $('per_num').val()},
+            success:function () {
+
+            }
+        })
+    })
+    
+    
+</script>
+
+{#<select name="per_num" id="" class="form-control input-sm">#}
+{#                                    <option value="10">10</option>#}
+{#                                    <option value="20">20</option>#}
+{#                                    <option value="50">50</option>#}
+{#                                    <option value="100">100</option>#}
+{#                                </select>#}
+</body>
+</html>
