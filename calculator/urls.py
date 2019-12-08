@@ -18,4 +18,6 @@ from myproject import urls
 
 urlpatterns = [
     path('', views.calculator),
+    path('upload_doc/', views.upload_doc),
+
 ]
